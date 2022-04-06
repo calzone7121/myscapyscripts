@@ -43,16 +43,12 @@ def send_packets():
 #display clients information from clients array
 def display_clients():
     print()
-    print("No. |\tDevice Name     |\tIP Adddress     |\tMAC Address        |")
-    print("____|\t________________|\t________________|\t___________________|")
+    print("No |\tIP Address     |\tMAC Address        |")
+    print("___|\t_______________|\t___________________|")
     print()
     for client in clients:
-        try:  
-            print("{:2}\t{:20}\t{:16}\t{:18}".format(clients.index(client), socket.gethostbyaddr(client['ip'])[0], client['ip'], client['mac']))
-            print("-"*76)
-        except:
-            print("{:2}\t{:20}\t{:16}\t{:18}".format(clients.index(client), "Unknown-Host", client['ip'], client['mac']))
-            print("-"*76)
+        print("{}\t{}\t\t{}".format(clients.index(client), client['ip'], client['mac']))
+        print("-"*52)
 
 if __name__=="__main__":
     main()
